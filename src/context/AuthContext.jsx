@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      const response = await axios.post('https://lista-de-tareas-frontend-x3am.onrender.com/api/auth/login', credentials);
+      const response = await axios.post('https://lista-de-tareas-backend-lq9k.onrender.com/api/auth/login', credentials);
       setToken(response.data.token);
       localStorage.setItem('authToken', response.data.token); // Guardar token en Local Storage
       console.log('Login exitoso');
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (credentials) => {
     try {
-      const response = await axios.post('https://lista-de-tareas-frontend-x3am.onrender.com/api/auth/register', credentials);
+      const response = await axios.post('https://lista-de-tareas-backend-lq9k.onrender.com/api/auth/register', credentials);
       console.log('Registro exitoso', response);
       // Opcional: Puedes iniciar sesión automáticamente después del registro
     } catch (error) {
