@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (credentials) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/register', credentials);
+      const response = await axios.post('https://lista-de-tareas-frontend-x3am.onrender.com/api/auth/register', credentials);
       console.log('Registro exitoso', response);
       // Opcional: Puedes iniciar sesión automáticamente después del registro
     } catch (error) {

@@ -16,7 +16,7 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     if (token) {
-      axios.get('http://localhost:4000/api/tasks', {
+      axios.get('https://lista-de-tareas-frontend-x3am.onrender.com/api/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(response => {
@@ -32,7 +32,7 @@ export const TaskProvider = ({ children }) => {
 
   const showDetails = async (task) => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/tasks/${task._id}`, {
+      const response = await axios.get(`https://lista-de-tareas-frontend-x3am.onrender.com/api/tasks/${task._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setDetails(response.data);
@@ -45,7 +45,7 @@ export const TaskProvider = ({ children }) => {
   
 
   const addTask = (task) => {
-    axios.post('http://localhost:4000/api/tasks', task, {
+    axios.post('https://lista-de-tareas-frontend-x3am.onrender.com/api/tasks', task, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -57,7 +57,7 @@ export const TaskProvider = ({ children }) => {
   };
 
   const deleteTask = (id) => {
-    axios.delete(`http://localhost:4000/api/tasks/${id}`, {
+    axios.delete(`https://lista-de-tareas-frontend-x3am.onrender.com/api/tasks/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {
@@ -69,7 +69,7 @@ export const TaskProvider = ({ children }) => {
   };
 
   const updateTask = (id, updatedData) => {
-    axios.put(`http://localhost:4000/api/tasks/${id}`, updatedData, {
+    axios.put(`https://lista-de-tareas-frontend-x3am.onrender.com/api/tasks/${id}`, updatedData, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
